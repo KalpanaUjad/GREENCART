@@ -5,12 +5,14 @@ import connectDB from './configs/db.js';
 import 'dotenv/config';
 import userRouter from './routes/userRoute.js';
 import sellerRouter from './routes/sellerRoute.js';
+import connectCloudinary from './configs/cloudinary.js';
 
 const app = express();
 const port = process.env.PORT || 4000;
 
 // mongodb called
 await connectDB();
+await connectCloudinary();
 
 // Middleware configuration
 app.use(express.json());
